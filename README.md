@@ -1,19 +1,27 @@
-# lucky-play
+# vue 專案範本
+包含了Vue全家桶(vue , vuex, vue-router, axios)以及好用的element-ui功能
 
-## Project setup
+## 安裝方式
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 開發環境
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 編譯開發環境dist
 ```
-npm run build
+npm run build:dev
 ```
+環境設定檔位於.env.development
+
+### 編譯正式環境dist
+```
+npm run build:prod
+```
+環境設定檔位於.env.production
 
 ### Run your tests
 ```
