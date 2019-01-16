@@ -9,16 +9,23 @@ import Layout from '@/views/layout/Layout'
 export const constantRouterMap = [
   {
     component: Layout,
-    path: '/test',
+    path: '/',
+    redirect: 'index',
     name: 'index',
     children: [
       {
         path: 'index',
         component: () => import('@/views/index'),
-        name: 'Test Page'
+        name: 'Index'
       }
     ]
-  }
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/errorPage/404'),
+    hidden: true
+  },
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 export default new Router({
