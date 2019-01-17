@@ -1,5 +1,6 @@
 import { login, logout } from '@/api/login'
 import { setToken, removeToken } from '@/utils/auth'
+import Cookies from 'js-cookie'
 
 const user = {
   state: {
@@ -9,7 +10,8 @@ const user = {
     name: '',
     avatar: '',
     permissions: [],
-    status: ''
+    status: '',
+    language: Cookies.get('language') || 'tw'
   },
   mutations: {
     SET_TOKEN: (state, token) => {
@@ -23,6 +25,10 @@ const user = {
     },
     SET_PERMISSIONS: (state, permissions) => {
       state.permissions = permissions
+    },
+    SET_LANGUAGE: (state, language) => {
+      state.language = language
+      Cookies.set('language', language)
     }
   },
   actions: {
@@ -82,6 +88,9 @@ const user = {
           reject(error)
         })
       })
+    },
+    setLanguage({ commit }, language) {
+      commit('SET_LANGUAGE', language)
     }
   }
 }
