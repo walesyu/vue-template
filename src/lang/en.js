@@ -1,8 +1,8 @@
 export default {
   HomePage: {
-    Hello: '你好'
+    Hello: 'Hello'
   },
   Common: {
-    Email: '電子郵件'
+    Email: 'Email'
   }
 }

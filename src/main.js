@@ -6,10 +6,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
 import i18n from './lang'
 import store from './store'
+import VeeValidate from 'vee-validate'
 
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
+Vue.use(VeeValidate)
 
 new Vue({
   router,
