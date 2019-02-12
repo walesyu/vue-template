@@ -16,6 +16,7 @@
     "vue": "^2.5.21",
     "vue-i18n": "^8.7.0",
     "vue-router": "^3.0.2",
+    "vue-update-message": "^1.0.7",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.5.4"
   },
