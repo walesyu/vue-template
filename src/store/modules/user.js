@@ -20,6 +20,15 @@ const user = {
     SET_NAME: (state, name) => {
       state.name = name
     },
+    SET_USER_ID: (state, userId) => {
+      state.userId = userId
+    },
+    SET_LOGIN_ID: (state, loginId) => {
+      state.loginId = loginId
+    },
+    SET_STATUS: (state, status) => {
+      state.status = status
+    },
     SET_AVATAR: (state, avatar) => {
       state.avatar = avatar
     },
@@ -33,7 +42,7 @@ const user = {
   },
   actions: {
     // 登入
-    LoginByUsername({ commit }, formData) {
+    LoginById({ commit }, formData) {
       return new Promise((resolve, reject) => {
         login(formData).then(response => {
           const authorization = response.headers.authorization

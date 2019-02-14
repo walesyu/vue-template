@@ -10,24 +10,24 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap-vue": "^2.0.0-rc.11",
     "js-cookie": "^2.2.0",
-    "vee-validate": "^2.1.5",
-    "vue": "^2.5.21",
-    "vue-i18n": "^8.7.0",
+    "bootstrap": "^4.0.0",
+    "vee-validate": "^2.1.7",
+    "vue": "^2.6.0",
+    "vue-i18n": "^8.8.1",
     "vue-router": "^3.0.2",
     "vue-update-message": "^1.0.7",
-    "vuex": "^3.0.1",
+    "vuex": "^3.1.0",
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-plugin-eslint": "^3.2.0",
-    "@vue/cli-service": "^3.2.0",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.13.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.6"
   },
   "eslintConfig": {
     "root": true,

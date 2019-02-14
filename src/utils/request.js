@@ -28,22 +28,20 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(
   function(response) {
-    // response.headers = { 'authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJyb290QWdlbnRJZCI6bnVsbCwic3ViIjoiMWNhZDZiMjQtYWQ3NC00MjFjLWJiOTYtYWFmOTRiZjE1Njc1IiwicGVybWlzc2lvbnMiOlsxLDIsMyw0LDUsNiw3LDgsOSwxMCwxMSwxMiwxMywxNCwxNSwxNiwxNywxOCwxOSwyMCwyMSwyMiwyMywyNCwyNSwyNiwyNywyOCwyOSwzMCwzMSwzMiwzMywzNCwzNV0sInJvbGVzIjpbIlJvb3QiXSwibmFtZSI6IlN1cGVyIiwicGFyZW50QWdlbnRJZCI6bnVsbCwiZXhwIjoxNTQ0NTE4Mzc0LCJzdXJyb2dhdGVGb3IiOm51bGwsImlhdCI6MTU0NDQzMTk3NCwiZW1haWwiOm51bGwsImFnZW50TGV2ZWwiOjAsInN0YXR1cyI6MX0.ZPnGa9vhKuXOHZ0zPdQ30yIzhRrEmfvLViBqT184Ozrd-FTFrvKwUBVvkJ3erbctRO8F9GSYn1AePn3K-E_9Iw' }
+    // response.headers = { 'authorization': '' }
     return response
   },
-  /**
-     * 下面的注释为通过在response里，自定义code来标示请求状态
-     * 当code返回如下情况则说明权限有问题，登出并返回到登录页
-     * 如想通过 xmlhttprequest 来状态码标识 逻辑可写在下面error中
-     * 以下代码均为样例，请结合自生需求加以修改，若不需要，则可删除
-     */
   error => {
     console.log('err' + error) // for debug
-    if (error.response.data && error.response.data.message) {
-      Vue.prototype.$message.error(error.response.data.message, 5 * 1000)
+    if (!error.response) {
+      Vue.prototype.$message.error(error, 5 * 1000)
     } else {
-      Vue.prototype.$message.error(error.message, 5 * 1000
-      )
+      if (error.response.data && error.response.data.message) {
+        Vue.prototype.$message.error(error.response.data.message, 5 * 1000)
+      } else {
+        Vue.prototype.$message.error(error.message, 5 * 1000
+        )
+      }
     }
 
     return Promise.reject(error)

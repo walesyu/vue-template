@@ -17,6 +17,11 @@ export const constantRouterMap = [
         path: 'index',
         component: () => import('@/views/index'),
         name: 'Index'
+      },
+      {
+        path: 'form',
+        component: () => import('@/views/example/form'),
+        name: 'form'
       }
     ]
   },
