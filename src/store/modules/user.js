@@ -1,5 +1,5 @@
 import { login, logout } from '@/api/login'
-import { setToken, removeToken } from '@/utils/auth'
+import { setToken, removeToken } from '@/services/auth'
 import Cookies from 'js-cookie'
 
 const user = {

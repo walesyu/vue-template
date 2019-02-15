@@ -2,7 +2,7 @@
   <div>
     <ul class="nav justify-content-end">
       <li class="nav-item nav-link">
-        {{ $t('Common.Language')}}
+        {{ $t('Common.Language') }}
       </li>
       <li class="nav-item">
         <a v-if="language !== 'tw'" class="nav-link" href="#" @click.prevent="changeLanguage('tw')">

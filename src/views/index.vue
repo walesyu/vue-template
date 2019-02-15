@@ -6,9 +6,8 @@
 <script>
 export default {
   name: 'Index',
-  data() {
-  },
   created() {
+    console.log(process.env)
     this.$store.commit('SET_NAME', 'Guest')
   }
 }
