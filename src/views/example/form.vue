@@ -35,10 +35,12 @@
         <div class="col-lg-6">
           <form class="form" data-vv-scope="changePass" @submit.prevent="changePassword">
             <div class="form-group">
-              <label>{{ $t('Member.OldPassword') }}</label>
-              <input v-model="form.password" v-validate="{ required: true }" class="form-control" :data-vv-as="$t('Member.OldPassword')" name="form.password" placeholder="" type="password">
-              <div v-show="errors.has('form.password')" class="text-danger">
-                {{ errors.first('form.password') }}
+              <div class="input-group">
+                <label for="input-icon-left" class="control-label">{{ $t('Member.OldPassword') }}</label>
+                <input id="input-icon-left" v-model="form.password" v-validate="{ required: true }" class="form-control" :data-vv-as="$t('Member.OldPassword')" name="form.password" placeholder="" type="password">
+                <div v-show="errors.has('form.password')" class="text-danger">
+                  {{ errors.first('form.password') }}
+                </div>
               </div>
             </div>
             <div class="form-group">
