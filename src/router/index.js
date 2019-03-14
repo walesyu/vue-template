@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import Router from 'vue-router'
+import Layout from '@/views/layout/Layout'
+// const Layout = () => import(/* webpackChunkName: "group-foo" */ '@/views/layout/Layout.vue')
 
 Vue.use(Router)
 
-/* Layout */
-import Layout from '@/views/layout/Layout'
-export const constantRouterMap = [
+export const routerMap = [
   {
     component: Layout,
     path: '/',
@@ -17,6 +17,16 @@ export const constantRouterMap = [
         path: 'index',
         component: () => import('@/views/index'),
         name: 'Index'
+      },
+      {
+        path: 'form',
+        component: () => import('@/views/example/form'),
+        name: 'form'
+      },
+      {
+        path: 'form2',
+        component: () => import('@/views/example/formElement'),
+        name: 'form2'
       }
     ]
   },
@@ -30,5 +40,5 @@ export const constantRouterMap = [
 
 export default new Router({
   scrollBehavior: () => ({ y: 0 }),
-  routes: constantRouterMap
+  routes: routerMap
 })

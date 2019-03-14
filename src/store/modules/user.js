@@ -1,5 +1,6 @@
 import { login, logout } from '@/api/login'
-import { setToken, removeToken } from '@/utils/auth'
+import { setToken, removeToken } from '@/services/auth'
+import Cookies from 'js-cookie'
 
 const user = {
   state: {
@@ -9,7 +10,8 @@ const user = {
     name: '',
     avatar: '',
     permissions: [],
-    status: ''
+    status: '',
+    language: Cookies.get('language') || 'tw'
   },
   mutations: {
     SET_TOKEN: (state, token) => {
@@ -18,16 +20,29 @@ const user = {
     SET_NAME: (state, name) => {
       state.name = name
     },
+    SET_USER_ID: (state, userId) => {
+      state.userId = userId
+    },
+    SET_LOGIN_ID: (state, loginId) => {
+      state.loginId = loginId
+    },
+    SET_STATUS: (state, status) => {
+      state.status = status
+    },
     SET_AVATAR: (state, avatar) => {
       state.avatar = avatar
     },
     SET_PERMISSIONS: (state, permissions) => {
       state.permissions = permissions
+    },
+    SET_LANGUAGE: (state, language) => {
+      state.language = language
+      Cookies.set('language', language)
     }
   },
   actions: {
     // 登入
-    LoginByUsername({ commit }, formData) {
+    LoginById({ commit }, formData) {
       return new Promise((resolve, reject) => {
         login(formData).then(response => {
           const authorization = response.headers.authorization
@@ -82,6 +97,9 @@ const user = {
           reject(error)
         })
       })
+    },
+    setLanguage({ commit }, language) {
+      commit('SET_LANGUAGE', language)
     }
   }
 }

@@ -1,16 +1,14 @@
 <template>
-  <div>
-    Index {{ $t('HomePage.Hello') }} {{ $store.getters.name }}
-  </div>
+  <h1>
+    This is Index
+  </h1>
 </template>
 <script>
 export default {
   name: 'Index',
   created() {
+    console.log(process.env)
     this.$store.commit('SET_NAME', 'Guest')
-  },
-  methods: {
-
   }
 }
 </script>
