@@ -260,14 +260,12 @@
 </template>
 
 <script>
-import CountriesList from '@/data/CountriesList'
 
 export default {
   name: 'FormElements',
   data() {
     return {
       isMale: true,
-      countriesList: CountriesList,
       chosenCountry: '',
       clearableText: '',
       successfulEmail: 'andrei@dreamsupport.io',
